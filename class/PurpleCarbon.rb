@@ -11,8 +11,8 @@ class PurpleCarbon
     @doc = Nokogiri::XML(File.read "../config.xml")
 
     # Name of App
-    name = @doc.at_css "widget name"
-    name.content = config['apps'][project]['name']
+    # name = @doc.at_css "widget name"
+    # name.content = config['apps'][project]['name']
 
     # Description of app
     description = @doc.at_css "widget description"
@@ -30,6 +30,17 @@ class PurpleCarbon
     widget['version'] = config['apps'][project]['widget']['version']
 
     File.open("../config.xml", "w") {|f| f.write(@doc.to_xml) }
+
+    # system("cd ../ &&
+    #         ionic cordova plugin save &&
+    #         ionic cordova platform rm ios &&
+    #         ionic cordova platform add ios &&
+    #         ionic cordova prepare ios &&
+    #         ionic cordova build ios")
+    system("cd ../ &&
+            ionic cordova plugin save &&
+            ionic cordova prepare ios &&
+            ionic cordova build ios")
 
   end
 
