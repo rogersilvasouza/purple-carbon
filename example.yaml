@@ -1,0 +1,26 @@
+---
+apps:
+
+    project1:
+      name: Project 1
+      description: Descriptio 1
+      api: api.site.com
+      author:
+        email: ti@example.com
+        href: http://www.example.com
+        name: John Doe
+      widget:
+        id: com.site.app
+        version: 0.0.1
+
+    project2:
+      name: Project 2
+      description: Description 2
+      api: api.site.com
+      author:
+        email: ti@example.com
+        href: http://www.example.com
+        name: Anne Doe
+      widget:
+        id: com.site.app
+        version: 0.0.1
