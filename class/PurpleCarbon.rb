@@ -31,6 +31,8 @@ class PurpleCarbon
 
     File.open("../config.xml", "w") {|f| f.write(@doc.to_xml) }
 
+    system("cd ../ && ionic cordova resources")
+
     # system("cd ../ &&
     #         ionic cordova plugin save &&
     #         ionic cordova platform rm ios &&
@@ -38,9 +40,11 @@ class PurpleCarbon
     #         ionic cordova prepare ios &&
     #         ionic cordova build ios")
 
-    # system("cd ../ &&
-    #         ionic cordova prepare android &&
-    #         ionic cordova build android")
+    system("cd ../ &&
+            ionic cordova prepare android &&
+            ionic cordova build android")
+
+    # system("cd ../ && ionic cordova run android --device")
 
   end
 
